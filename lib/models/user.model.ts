@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   name: { type: String, require: true },
   image: String,
   bio: String,
-  threads: [{ type: mongoose.Schema.Types.ObjectId }],
+  threads: [{ type: mongoose.Schema.Types.ObjectId, ref: "Thread" }],
   onboarded: {
     type: Boolean,
     default: false,
