@@ -29,8 +29,9 @@ async function Page() {
                   <Image
                     src={activity.author.image}
                     alt="Profile Picture"
-                    width={20}
-                    height={20}
+                    width={30}
+                    height={30}
+                    style={{ width: 30, height: 30 }}
                     className="rounded-full object-cover"
                   />
                   <p className="!text-small-regular text-light-1">

@@ -128,6 +128,7 @@ function ThreadCard({
               alt={`user_${index}`}
               width={24}
               height={24}
+              style={{ width: 24, height: 24 }}
               className={`${index !== 0 && "-ml-5"} rounded-full object-cover`}
             />
           ))}
@@ -154,7 +155,7 @@ function ThreadCard({
             alt={community.name}
             width={14}
             height={14}
-            style={{ width: "auto", height: "auto" }}
+            style={{ width: 14, height: 14 }}
             className="ml-1 rounded-full object-cover"
           />
         </Link>

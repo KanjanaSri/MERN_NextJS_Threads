@@ -2,24 +2,21 @@
 
 import * as z from "zod";
 import { useForm } from "react-hook-form";
-import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { usePathname } from "next/navigation";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 
 import { CommentValidation } from "@/lib/validations/thread";
-import Image from "next/image";
 import { addCommentToThread } from "@/lib/actions/thread.actions";
-// import { createThread } from "@/lib/actions/thread.action";
-// import { updateUser } from "@/lib/actions/user.actions";
 
 interface Props {
   threadId: string;
@@ -28,10 +25,9 @@ interface Props {
 }
 
 function Comment({ threadId, currentUserImg, currentUserId }: Props) {
-  const router = useRouter();
   const pathname = usePathname();
 
-  const form = useForm({
+  const form = useForm<z.infer<typeof CommentValidation>>({
     resolver: zodResolver(CommentValidation),
     defaultValues: {
       thread: "",
@@ -63,6 +59,7 @@ function Comment({ threadId, currentUserImg, currentUserId }: Props) {
                   alt="Profile image"
                   width={48}
                   height={48}
+                  style={{ width: 48, height: 45 }}
                   className="rounded-full object-cover"
                 />
               </FormLabel>

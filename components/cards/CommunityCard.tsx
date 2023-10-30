@@ -37,7 +37,7 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
 
       <p className="mt-4 text-subtle-medium text-gray-1">{bio}</p>
 
-      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-5 flex flex-wrap items-center gap-3">
         <Link href={`/communities/${id}`}>
           <Button size="sm" className="community-card_btn">
             View
@@ -53,6 +53,7 @@ function CommunityCard({ id, name, username, imgUrl, bio, members }: Props) {
                 alt={`user_${index}`}
                 width={28}
                 height={28}
+                style={{ width: 28, height: 28 }}
                 className={`${
                   index !== 0 && "-ml-2"
                 } rounded-full object-cover`}
