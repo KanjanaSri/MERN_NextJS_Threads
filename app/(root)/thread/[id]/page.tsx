@@ -27,7 +27,7 @@ async function Page({ params }: { params: { id: string } }) {
           content={thread.text}
           author={thread.author}
           community={thread.community}
-          creactedAt={thread.creactedAt}
+          createdAt={thread.createdAt}
           comments={thread.children}
         />
       </div>
@@ -50,7 +50,7 @@ async function Page({ params }: { params: { id: string } }) {
             content={childItem.text}
             author={childItem.author}
             community={childItem.community}
-            creactedAt={childItem.creactedAt}
+            createdAt={childItem.createdAt}
             comments={childItem.children}
             isComment
           />
