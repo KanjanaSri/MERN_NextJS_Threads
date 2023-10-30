@@ -38,7 +38,7 @@ async function ThreadsTab({ currentUserId, accountId, accountType }: Props) {
                   id: thread.author.id,
                 }
           }
-          community={thread.community} // TODO
+          community={thread.community}
           createdAt={thread.createdAt}
           comments={thread.children}
         />
