@@ -17,7 +17,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useOrganization } from "@clerk/nextjs";
 
 import { ThreadValidation } from "@/lib/validations/thread";
-import { createThread } from "@/lib/actions/thread.action";
+import { createThread } from "@/lib/actions/thread.actions";
 
 interface Props {
   user: {
